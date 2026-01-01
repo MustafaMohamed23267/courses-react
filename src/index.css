@@ -1,0 +1,145 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+/* @import '~@flaticon/flaticon-uicons/css/all/all.css'; */
+
+
+@theme
+{
+--color-background:hsl(var(--background));
+--color-foreground:hsl(var(--foreground));
+--color-primary:hsl(var(--primary));
+--color-card:hsl(var(--card));
+--color-cardtext:hsl(var(--cardtext));
+--color-detail:hsl(var(--detail));
+}
+
+@layer base
+{
+  :root
+  {
+    --background:210 40% 98%;
+    --foreground: 222 47% 11%;
+    --primary : 250 47% 60%;
+    --primary-foreground : 210 40% 98%;
+    --card: 222 47% 4%;
+    --cardtext:213 31% 91%;
+    --detail: 0 0% 30%;
+  }
+
+  .dark
+  {
+   --background:222 47% 4%;
+   --foreground: 213 31% 91%;
+   --primary : 250 65% 65%;
+   --primary-foreground : 213 31% 91%;
+   --card:210 40% 98%;
+   --cardtext:222 47% 11%;
+   --detail: 0 0% 70%;
+  }
+
+}
+
+body {
+            background-color: var(--color-background);
+            color: var(--color-foreground);
+            /* font-family: "Smooch Sans", sans-serif;
+            font-size: 16px;
+            font-weight:500; */
+            /* font-height: 10px; */
+
+            
+        }
+
+  /* @utility add-form {
+    @apply block py-2.5 px-0 w-full text-sm text-heading bg-transparent border-0 border-b border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-indigo-500
+  } */
+
+  .before-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 2s ease-out;
+}
+
+.animate-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.push-up
+{
+    animation-name:up;
+    animation-iteration-count: 1;
+    animation-duration: 400ms;
+    animation-timing-function: linear  ;
+}
+
+.push-down
+{
+    animation-name:down;
+    animation-iteration-count: 1;
+    animation-duration: 700ms;
+    animation-timing-function: linear  ;
+}
+
+.bottom-shadow {
+    box-shadow: 0 6px 4px -4px #f66630;
+    /* h-offset | v-offset | blur | spread | color */
+}
+
+.list{
+  list-style-type:disc;
+}
+.appear{
+  animation: appear 5s ease-out;
+  animation-timeline: view();
+  animation-range: entry 0 cover 50%;
+}
+
+@keyframes appear {
+        from
+        {
+            opacity: 0;
+            scale: 0;
+            transform: translateX(200px);
+           
+        }
+       
+        to
+        {
+            opacity: 1;
+            transform: translateX(0px);
+             scale: 1;
+            
+        }
+    }
+@keyframes up {
+        0%
+        {
+            
+            scale: 0.5;
+           
+        }
+       
+        100%
+        {
+            
+             scale: 1;
+            
+        }
+    }
+
+ @keyframes down {
+        0%
+        {
+            scale: 1;
+            opacity: 1;
+           
+        }
+       
+        100%
+        {
+            scale: 0 ;
+             
+            
+        }
+    }   
