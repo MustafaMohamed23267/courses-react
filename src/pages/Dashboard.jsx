@@ -307,7 +307,7 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
          <div  className=' pt-15 w-full h-full z-10'>
       
         
-            <main className='flex z-10 max-sm:flex-col items-center'>
+            <main className='flex z-10 max-sm:flex-col max-sm:space-y-6 items-center'>
 
                 {/* left section */}
               <section className='md:w-[20%] px-5 flex md:flex-col  space-y-2 z-10 space-x-4 '>
