@@ -307,10 +307,10 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
          <div  className=' pt-15 w-full h-full z-10'>
       
         
-            <main className='flex z-10 max-sm:grid-cols-1'>
+            <main className='flex z-10 max-sm:flex-col'>
 
                 {/* left section */}
-              <section className='w-[20%] px-5 flex flex-col space-y-2 z-10  '>
+              <section className='w-[20%] px-5 flex md:flex-col  space-y-2 z-10  '>
                  <Link to='#' className={`${buttonstyle} space-x-2 border-l border-indigo-600`}> 
                 <img src={dashboard} className={"w-6 h-6 "} /> 
                 <span className='text-xl max-sm:hidden'>Dashboard</span>
