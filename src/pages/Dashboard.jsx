@@ -24,7 +24,7 @@ import { IoCalendarClearOutline } from 'react-icons/io5';
 
 export default function Dashboard(){
 // export const Dashboard = ()=>{
-const buttonstyle = "rounded-full px-6 py-4 bg-teal-900 dark:bg-gray-900/70 flex text-white hover:scale-[1.05] duration-500 cursor-pointer dark:inset-shadow-sm inset-shadow-indigo-500 ";
+const buttonstyle = "rounded-full px-6 py-4 max-sm:px-2 max-sm:py-2 bg-teal-900 dark:bg-gray-900/70 flex text-white hover:scale-[1.05] duration-500 cursor-pointer dark:inset-shadow-sm inset-shadow-indigo-500 ";
 
 const fiterButtons = "rounded-xl flex flex-col items-center space-y-2 px-2 py-4 w-[175px]   dark:bg-gray-900 dark:outline-1 dark:outline-offset-2 dark:outline-white/10 text-white cursor-pointer hover:scale-[1.04] duration-500";
   const {user} = useContext(AppContext);
