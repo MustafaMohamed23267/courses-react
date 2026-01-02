@@ -40,9 +40,9 @@ export default function Home()
             <main> 
                 <Nav/>
                 {/* first element mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm*/}
-                <section className=" flex  mask-b-from-65% mask-b-to-100% bg-[#fddad3] dark:bg-gray-900  "> 
+                <section className=" flex max-sm:flex-col mask-b-from-65% mask-b-to-100% bg-[#fddad3] dark:bg-gray-900  "> 
                 {/* Left Section */}
-                <div className="w-[50%] mt-20 pl-25 pr-10 ">
+                <div className="w-[50%] max-sm:w-full mt-20 md:pl-25 pl-5 pr-10 ">
                     <div className='  -rotate-12 '>
                       <span className='px-2 py-0.5 text-sm rounded-full bg-[#f66630] text-white '> eLearning Platform</span>
                     </div>
@@ -87,8 +87,8 @@ export default function Home()
 
                 {/* Right Section */}
                 
-                <div className="w-[50%]">
-                    <img src={home} className='w-fit ' />
+                <div className="w-[50%] max-sm:w-full max-sm:flex">
+                    <img src={home} className='md:w-fit w-full' />
                 </div>
 
                
@@ -108,19 +108,19 @@ export default function Home()
                                 We are passionate about emproving learners <span className='text-gray-600 dark:text-gray-400'>Worldwide with high-quality, accessible & engaging education. Our mission offering a divers range of courses</span>
                             </p>
 
-                            <div className='flex space-x-3 py-6'>
+                            <div className='flex space-x-3 py-6 max-sm:px-15 max-sm:text-sm'>
                                 <div className='flex space-x-2.5'>
-                                    <span className='text-5xl font-bold'>56K</span>
+                                    <span className='text-5xl font-bold max-sm:text-xl'>56K</span>
                                     <span className='text-gray-600 dark:text-gray-400'>Students Enrolled in EduFree Courses</span>
                                 </div>
 
                                 <div className='flex space-x-2.5'>
-                                    <span className='text-5xl font-bold'>170+</span>
-                                    <span className='text-gray-600 dark:text-gray-400'>Experienced Teachers Services</span>
+                                    <span className='text-5xl font-bold max-sm:text-xl'>170+</span>
+                                    <span className='text-gray-600 dark:text-gray-400 '>Experienced Teachers Services</span>
                                 </div>
 
                                 <div className='flex space-x-2.5'>
-                                    <span className='text-5xl font-bold'>25+</span>
+                                    <span className='text-5xl font-bold max-sm:text-xl'>25+</span>
                                     <span className='text-gray-600 dark:text-gray-400'>Years of eLearning Education Experience</span>
                                 </div>
 
@@ -182,7 +182,7 @@ export default function Home()
 
                 {/* third  element testimonial */}
                 <section  className='flex flex-col items-center py-8 appear' >
-                    <div className=' flex flex-col items-center w-full'>
+                    <div className=' flex flex-col items-center w-full max-sm:px-5'>
                     
                         <div className='  -rotate-12 '>
                         <span className='px-2 py-0.5 text-sm rounded-full bg-[#f66630]  text-white '> Testimonial</span>
@@ -197,8 +197,8 @@ export default function Home()
                             
 
                             {/*  */}
-                            <div className='bg-teal-600 h-15 w-15 rounded-full absolute top-37 -right-2 z-0'></div>
-                            <div className='relative space-y-2 top-10 rounded-4xl shadow-md/20  w-[900px] h-[450px] bg-white dark:bg-gray-900 z-5'>
+                            <div className='bg-teal-600 h-15 w-15 rounded-full absolute top-37 max-sm:top-50 -right-2 z-0'></div>
+                            <div className='relative space-y-2 top-10  rounded-4xl shadow-md/20  w-[900px] h-[450px]  bg-white dark:bg-gray-900 z-5 max-sm:w-[450px] max-sm:h-[470px] max-sm:ml-5'>
                             
                                 <img src={world} className='absolute w-full h-full z-0 opacity-30 dark:opacity-5' />
                                 <div className='absolute h-full px-10 space-y-6 top-30'>
@@ -229,22 +229,22 @@ export default function Home()
                         </div>
                     </div>
                         
-<br/>
+                     <br/>
                 </section>
                 {/* end of third  element testimonial mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm*/}
 
                 
 
                 {/* 4th  element why us mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm*/}
-                <section  className='appear flex  pb-10  mask-b-from-80% mask-b-to-100%  mask-t-from-90% mask-t-to-100% bg-[#fddad3] dark:mask-b-from-65% dark:bg-gray-900'>
+                <section  className='appear flex max-sm:flex-col-reverse max-sm:px-5  pb-10  mask-b-from-80% mask-b-to-100%  mask-t-from-90% mask-t-to-100% bg-[#fddad3] dark:mask-b-from-65% dark:bg-gray-900'>
                     {/* left-section */}
-                    <div className='w-[45%]' >
+                    <div className='w-[45%] max-sm:w-full' >
                         <img src={employee} className='w-fit h-screen mask-b-from-90% mask-b-to-100% ' />
 
                     </div>
 
                     {/* right-section */}
-                    <div className='w-[55%] '>
+                    <div className='w-[55%] max-sm:w-full'>
                         <div className='  -rotate-12 '>
                         <span className='px-2 py-0.5 text-sm rounded-full bg-[#f66630] text-white '> Why Us</span>
                         </div>
@@ -303,7 +303,7 @@ export default function Home()
                         </p>
                         </div>
 
-                        <div className='flex space-x-6 py-10'>
+                        <div className='md:flex max-sm:grid max-sm:grid-cols-1 max-sm:space-y-6 md:space-x-6 py-10 px-20'>
 
                             
                             <div className='flex flex-col  px-5 py-5 w-[450px] rounded-lg bg-gray-200 text-gray-900 space-y-5' >
