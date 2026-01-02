@@ -373,7 +373,7 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
 
 {/* mmmmmmmmmmmmmmm  count buttons mmmmmmmmmmmmmmmmmmmmmmmmm */}
 
-                <div className=' flex space-x-4  dark:bg-gray-900/70 bg-teal-900/70 p-10 rounded-t-lg rounded-b-[50px] dark:inset-shadow-sm inset-shadow-indigo-500 dark:shadow-lg shadow-indigo-500/50'>
+                <div className=' flex max-sm:flex-col space-y-4 space-x-4  dark:bg-gray-900/70 bg-teal-900/70 p-10 rounded-t-lg rounded-b-[50px] dark:inset-shadow-sm inset-shadow-indigo-500 dark:shadow-lg shadow-indigo-500/50'>
                 
                 <div className='space-y-4'> 
                 <button onClick={getcourses} className={`${fiterButtons} bg-[#4f46e5]`}>
