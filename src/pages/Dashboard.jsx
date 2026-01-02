@@ -307,32 +307,32 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
          <div  className=' pt-15 w-full h-full z-10'>
       
         
-            <main className='flex z-10'>
+            <main className='flex z-10 max-sm:grid-cols-1'>
 
                 {/* left section */}
               <section className='w-[20%] px-5 flex flex-col space-y-2 z-10  '>
                  <Link to='#' className={`${buttonstyle} space-x-2 border-l border-indigo-600`}> 
                 <img src={dashboard} className={"w-6 h-6 "} /> 
-                <span className='text-xl '>Dashboard</span>
+                <span className='text-xl max-sm:hidde'>Dashboard</span>
                 </Link>
 
                 <Link to='/' className={buttonstyle}> 
-                <span className='text-xl'> &#9962; Home{category.id}</span>
+                <span className='text-xl max-sm:hidden'> &#9962; Home{category.id}</span>
                 </Link>
 
                 <Link to='/courses' className={`${buttonstyle} space-x-2`}> 
                 <img src={course} className={"w-5"} /> 
-                <span>Courses</span>
+                <span className=' max-sm:hidden'>Courses</span>
                 </Link>
 
                 <Link to='/addcourse' className={`${buttonstyle} space-x-2`}> 
                 <img src={add} className={"w-5"} /> 
-                <span>Add Courses</span>
+                <span className=' max-sm:hidden'>Add Courses</span>
                 </Link>
 
                 <Link to='/addcategory' className={`${buttonstyle} space-x-2`}> 
                 <img src={add2} className={"w-5 fill-white"} />
-                <span>Add Category</span>
+                <span className=' max-sm:hidden'>Add Category</span>
                 </Link>
                 
 
