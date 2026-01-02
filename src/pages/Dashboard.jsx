@@ -307,10 +307,10 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
          <div  className=' pt-15 w-full h-full z-10'>
       
         
-            <main className='flex z-10 max-sm:flex-col'>
+            <main className='flex z-10 max-sm:flex-col items-center'>
 
                 {/* left section */}
-              <section className='w-[20%] px-5 flex md:flex-col  space-y-2 z-10  '>
+              <section className='w-[20%] px-5 flex md:flex-col  space-y-2 z-10 space-x-4 '>
                  <Link to='#' className={`${buttonstyle} space-x-2 border-l border-indigo-600`}> 
                 <img src={dashboard} className={"w-6 h-6 "} /> 
                 <span className='text-xl max-sm:hidden'>Dashboard</span>
@@ -340,9 +340,9 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
 
               {/* right section */}
               <section className='w-[75%] space-y-4 z-10'>
-                <div className='flex space-x-8'> 
+                <div className='flex max-sm:flex-col space-x-8'> 
                     <div className='flex items-center'> 
-                        <div className='bg-teal-800 duration-500 dark:bg-gray-900/70 rounded-xl px-4 py-6 w-[620px] text-white space-y-6 dark:inset-shadow-sm inset-shadow-indigo-500 dark:shadow-lg shadow-indigo-500/50'> 
+                        <div className='bg-teal-800 duration-500 dark:bg-gray-900/70 rounded-xl px-4 py-6 w-[620px] max-sm:w-[320px] text-white space-y-6 dark:inset-shadow-sm inset-shadow-indigo-500 dark:shadow-lg shadow-indigo-500/50'> 
                         <h2 className='text-4xl '>Welcome back,{user.name} &#9995;</h2>
                         <p>Track your manage and LMS platform performance </p>                  
                         </div>
