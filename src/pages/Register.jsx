@@ -36,7 +36,7 @@ const RegistterForm = async (e)=>
     data.append("password_confirmation",form.password_confirmation);
     data.append("role",form.role);
 
-    const res = await fetch("http://localhost:8000/api/register",{
+    const res = await fetch("https://courses-laravel-production.up.railway.app/api/register",{
       method:"POST",
       body:data,
       headers:{

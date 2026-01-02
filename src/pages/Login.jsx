@@ -28,7 +28,7 @@ const handleLogin = async (e) => {
     loginData.append("email", login.email);
     loginData.append("password", login.password);
 
-    const res = await fetch("http://localhost:8000/api/login", {
+    const res = await fetch("https://courses-laravel-production.up.railway.app/api/login", {
         method: "POST",
         body: loginData,
         headers: {
