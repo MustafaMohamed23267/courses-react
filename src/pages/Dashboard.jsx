@@ -313,11 +313,11 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
               <section className='w-[20%] px-5 flex flex-col space-y-2 z-10  '>
                  <Link to='#' className={`${buttonstyle} space-x-2 border-l border-indigo-600`}> 
                 <img src={dashboard} className={"w-6 h-6 "} /> 
-                <span className='text-xl max-sm:hidde'>Dashboard</span>
+                <span className='text-xl max-sm:hidden'>Dashboard</span>
                 </Link>
 
                 <Link to='/' className={buttonstyle}> 
-                <span className='text-xl max-sm:hidden'> &#9962; Home{category.id}</span>
+                <span className='text-xl max-sm:hidden'> &#9962; </span><span>Home</span>
                 </Link>
 
                 <Link to='/courses' className={`${buttonstyle} space-x-2`}> 
