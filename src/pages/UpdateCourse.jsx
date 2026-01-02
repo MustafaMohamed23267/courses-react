@@ -48,7 +48,7 @@
        useEffect(() => {
         
         const fetchCourse = async()=>{
-                    const res = await fetch(`http://localhost:8000/api/courses/${id}`,{
+                    const res = await fetch(`https://courses-laravel-production.up.railway.app/api/courses/${id}`,{
                         method:"GET",
                         headers:{
                             Accept:"application/json",
@@ -103,7 +103,7 @@
                 DataForm.append("image_url",form.image_url);
           
 
-          const res = await fetch(`http://localhost:8000/api/courses/${id}`,{
+          const res = await fetch(`https://courses-laravel-production.up.railway.app/api/courses/${id}`,{
               method:"POST",
               body:DataForm,
               headers:{
