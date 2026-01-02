@@ -317,7 +317,7 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                 </Link>
 
                 <Link to='/' className={buttonstyle}> 
-                <span className='text-xl max-sm:hidden'> &#9962; </span><span>Home</span>
+                <span > &#9962; </span><span className='text-xl max-sm:hidden'>Home</span>
                 </Link>
 
                 <Link to='/courses' className={`${buttonstyle} space-x-2`}> 
