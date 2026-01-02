@@ -66,7 +66,7 @@ const fiterButtons = "rounded-xl flex flex-col items-center space-y-2 px-2 py-4 
             useEffect(()=>{
 
                 const fetchenrolled = async ()=>{
-                const getData = await fetch("http://127.0.0.1:8000/api/book",{
+                const getData = await fetch("https://courses-laravel-production.up.railway.app/api/book",{
                         method:"GET",
                         headers:{
                             Accept:"application/json"
@@ -86,7 +86,7 @@ const fiterButtons = "rounded-xl flex flex-col items-center space-y-2 px-2 py-4 
             useEffect(()=>
                             {
                             const fetchUsers = async()=>{
-                                const res = await fetch("http://127.0.0.1:8000/api/allusers",{
+                                const res = await fetch("https://courses-laravel-production.up.railway.app/api/allusers",{
                                     method:"GET",
                                     headers:{
                                     Accept:"application/json",
@@ -108,7 +108,7 @@ const fiterButtons = "rounded-xl flex flex-col items-center space-y-2 px-2 py-4 
                useEffect(()=>
               {
                   const fetchCourses = async()=>{
-                      const res = await fetch("http://127.0.0.1:8000/api/allcourses",{
+                      const res = await fetch("https://courses-laravel-production.up.railway.app/api/allcourses",{
                           method:"GET",
                           headers:{
                               Accept:"application/json",
@@ -129,7 +129,7 @@ const fiterButtons = "rounded-xl flex flex-col items-center space-y-2 px-2 py-4 
                useEffect(()=>
               {
                   const fetchCategory = async()=>{
-                      const res = await fetch("http://127.0.0.1:8000/api/category",{
+                      const res = await fetch("https://courses-laravel-production.up.railway.app/api/category",{
                           method:"GET",
                           headers:{
                               Accept:"application/json",
@@ -164,7 +164,7 @@ const HandelDelete = async () => {
 
     try {
         const res = await fetch(
-            `http://127.0.0.1:8000/api/category/${selectedCategory.id}`,
+            `https://courses-laravel-production.up.railway.app/api/category/${selectedCategory.id}`,
             {
                 method: "DELETE",
                 headers: {
@@ -342,8 +342,8 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
               <section className='w-[75%] space-y-4 z-10'>
                 <div className='flex space-x-8'> 
                     <div className='flex items-center'> 
-                        <div className='bg-teal-800 duration-500 dark:bg-gray-900/70 rounded-xl px-4 py-6 w-[600px] text-white space-y-6 dark:inset-shadow-sm inset-shadow-indigo-500 dark:shadow-lg shadow-indigo-500/50'> 
-                        <h2 className='text-4xl '>Welcome back,{user.name}</h2>
+                        <div className='bg-teal-800 duration-500 dark:bg-gray-900/70 rounded-xl px-4 py-6 w-[620px] text-white space-y-6 dark:inset-shadow-sm inset-shadow-indigo-500 dark:shadow-lg shadow-indigo-500/50'> 
+                        <h2 className='text-4xl '>Welcome back,{user.name} &#9995;</h2>
                         <p>Track your manage and LMS platform performance </p>                  
                         </div>
                     </div>
@@ -843,3 +843,7 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                       </div>
         
                     </div> */}
+
+                    // mysql -h mysql.railway.internal -P 3306 -u root -p railway booking_courses.sql
+
+                    // mysql://root:FMhbJXdnKLHclxFkcoCOuClJASWooFpI@shinkansen.proxy.rlwy.net:50301/railway

@@ -14,7 +14,7 @@
                 useEffect(()=>
                     {
                         const fetchCourses = async()=>{
-                            const res = await fetch("http://127.0.0.1:8000/api/category",{
+                            const res = await fetch("https://courses-laravel-production.up.railway.app/api/category",{
                                 method:"GET",
                                 headers:{
                                     Accept:"application/json",

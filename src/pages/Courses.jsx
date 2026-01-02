@@ -21,7 +21,7 @@ export default function Courses()
                 const fetchCourses = async()=>{
 
                     if (token ) {
-                        const res = await fetch("http://127.0.0.1:8000/api/courses",{
+                        const res = await fetch("https://courses-laravel-production.up.railway.app/api/courses",{
                         method:"GET",
                         headers:{
                             Accept:"application/json",
@@ -34,7 +34,7 @@ export default function Courses()
                     setLoading(false);
                     }
                     else{
-                        const res = await fetch("http://127.0.0.1:8000/api/allcourses",{
+                        const res = await fetch("https://courses-laravel-production.up.railway.app/api/allcourses",{
                           method:"GET",
                           headers:{
                               Accept:"application/json",
@@ -99,7 +99,7 @@ export default function Courses()
                 <div className="flex flex-col relative duration-700 outline-1 -outline-offset-1 outline-gray-300 dark:outline-white/10 dark:bg-white/5  pb-10  overflow-hidden  rounded-xl ">
                 <Link to={`/courses/${data.id}`}  class=" space-y-5  ">
                     <div className="w-full h-[250px]">
-                      <img  src={token?data.image_url: `http://127.0.0.1:8000/storage/${data.image_url}`} class="duration-500  hover:scale-[1.05] w-full h-full z-50 "/>
+                      <img  src={token?data.image_url: `https://courses-laravel-production.up.railway.app/storage/${data.image_url}`} class="duration-500  hover:scale-[1.05] w-full h-full z-50 "/>
                     </div>
                     <div className="absolute top-59 right-2 text-white text-sm flex space-x-1 justify-baseline bg-[#1c1e53] py-0.5 px-5 rounded-full">
                         <span className="text-[12px] mt-[2.5px]"> {data.rating}</span>

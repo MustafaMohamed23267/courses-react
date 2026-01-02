@@ -33,7 +33,7 @@ export const Nav = ()=>
         const handleLogout = async (e)=>
             {
                 e.preventDefault();
-                 const res = await fetch("http://127.0.0.1:8000/api/logout",{
+                 const res = await fetch("https://courses-laravel-production.up.railway.app/api/logout",{
                  method:"POST",
                 headers:{
                     Authorization:`Bearer ${token}`,

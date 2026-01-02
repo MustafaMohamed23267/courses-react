@@ -26,7 +26,7 @@ export default function CourseInfo(){
 
      useEffect(() => {
     const checkEnrollment = async () => {
-      const res = await fetch(`http://127.0.0.1:8000/api/book/check/${id}`, {
+      const res = await fetch(`https://courses-laravel-production.up.railway.app/api/book/check/${id}`, {
         headers: {
           Accept: "application/json",
           Authorization: `Bearer ${token}`,
@@ -47,7 +47,7 @@ export default function CourseInfo(){
                 
             const data = new FormData();
             data.append("course_id",ShowCourse.id);
-            const book = await fetch(`http://127.0.0.1:8000/api/book`,{
+            const book = await fetch(`https://courses-laravel-production.up.railway.app/api/book`,{
                 method:"POST",
                 body:data,
                 headers:{
@@ -80,7 +80,7 @@ export default function CourseInfo(){
     useEffect(()=>{
     const fetchCourse = async()=>{
                 if (token) {
-                    const res = await fetch(`http://127.0.0.1:8000/api/courses/${id}`,{
+                    const res = await fetch(`https://courses-laravel-production.up.railway.app/api/courses/${id}`,{
                         method:"GET",
                         headers:{
                             Accept:"application/json",
@@ -93,7 +93,7 @@ export default function CourseInfo(){
                     setLoading(false);
                 }
                 else{
-                    const res = await fetch(`http://127.0.0.1:8000/api/allcourses/${id}`,{
+                    const res = await fetch(`https://courses-laravel-production.up.railway.app/api/allcourses/${id}`,{
                         method:"GET",
                         headers:{
                             Accept:"application/json",
@@ -112,7 +112,7 @@ export default function CourseInfo(){
 
 const HandelDelete = async (e)=>{
     e.preventDefault();
-    await fetch(`http://127.0.0.1:8000/api/courses/${id}`,{
+    await fetch(`https://courses-laravel-production.up.railway.app/api/courses/${id}`,{
         method:"DELETE",
         headers:{
             Accept:"application/json",
@@ -169,7 +169,7 @@ const fullopacity = document.getElementById("deletemodal").style.display="none" 
                     <div className="flex flex-col  bg-white outline-gray-300 dark:outline-white/10 dark:bg-gray-900 dark:text-gray-200 text-gray-800  z-100 duration-700 outline-1  w-[300px] ">
                     <div  class=" space-y-5 ">
                         <div className="w-full h-[200px]">
-                            <img src={token?ShowCourse.image_url:`http://127.0.0.1:8000/storage/${ShowCourse.image_url}`}  class=" w-full h-full z-50 " />
+                            <img src={token?ShowCourse.image_url:`https://courses-laravel-production.up.railway.app/storage/${ShowCourse.image_url}`}  class=" w-full h-full z-50 " />
                         </div>
 
                         <div className="pl-5  z-100 ">

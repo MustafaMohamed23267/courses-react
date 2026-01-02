@@ -31,7 +31,7 @@ export default function AddCategory()
           DataForm.append("slug",form.slug);
           
 
-          const res = await fetch("http://127.0.0.1:8000/api/category",{
+          const res = await fetch("https://courses-laravel-production.up.railway.app/api/category",{
               method:"POST",
               body:DataForm,
               headers:{

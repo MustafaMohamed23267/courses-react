@@ -20,7 +20,7 @@ export default function UpdateCategory()
        useEffect(()=>
                     {
                         const fetchCategory = async()=>{
-                            const res = await fetch(`http://127.0.0.1:8000/api/category/${id}`,{
+                            const res = await fetch(`https://courses-laravel-production.up.railway.app/api/category/${id}`,{
                                 method:"GET",
                                 headers:{
                                     Accept:"application/json",
@@ -59,7 +59,7 @@ export default function UpdateCategory()
           DataForm.append("slug",form.slug);
           
 
-          const res = await fetch(`http://127.0.0.1:8000/api/category/${id}`,{
+          const res = await fetch(`https://courses-laravel-production.up.railway.app/api/category/${id}`,{
               method:"POST",
               body:DataForm,
               headers:{

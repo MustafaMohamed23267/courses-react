@@ -8,7 +8,7 @@ export const AppProvider = ({ children }) => {
 
 
     const getUser = async () => {
-        const res = await fetch("http://localhost:8000/api/user", {
+        const res = await fetch("https://courses-laravel-production.up.railway.app/api/user", {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`,
