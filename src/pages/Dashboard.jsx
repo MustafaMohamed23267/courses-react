@@ -331,7 +331,7 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                 </Link>
 
                 <Link to='/addcategory' className={`${buttonstyle} space-x-2`}> 
-                <img src={add2} className={"w-5 fill-white max-sm:w-6"} />
+                <img src={add2} className={"w-5 md:fill-white"} />
                 <span className=' max-sm:hidden'>Add Category</span>
                 </Link>
                 
