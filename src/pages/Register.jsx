@@ -75,8 +75,8 @@ const RegistterForm = async (e)=>
      
     </div>
     }     <div className="flex flex-col items-center justify-center w-full h-screen  py-10" >
-        <div className="w-[90%] h-full bg-teal-900  flex ">
-            <div className="w-[50%] relative overflow-hidden">
+        <div className="md:w-[90%]  h-full bg-teal-900  flex ">
+            <div className="w-[50%] max-sm:hidden relative overflow-hidden">
                 <div className=" absolute z-10  w-full h-full bg-gray-900/70"></div>
                 <img src={learn} className='absolute w-full h-full z-0 object-cover' />
                  <div className="relative z-10 h-screen text-white flex flex-col py-15 px-7 space-y-6">
@@ -88,7 +88,7 @@ const RegistterForm = async (e)=>
                    </div>
             </div>
 
-            <div className="w-[50%] flex flex-col text-white items-center space-y-4 py-5">
+            <div className="md:w-[50%]  max-sm:px-4 flex flex-col text-white items-center space-y-4 py-5">
                 <h2 className='text-3xl'>Register</h2>
                 <p className='text-sm'>please enter your data in the empty fields below</p>
 

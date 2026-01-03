@@ -71,10 +71,10 @@ const handleLogin = async (e) => {
     </div>
     }
      <div className="flex flex-col items-center justify-center w-full h-screen p-15" >
-        <div className="w-[90%] h-[90%] bg-teal-900  flex ">
+        <div className="md:w-[90%] md:h-[90%] bg-teal-900 max-sm:px-4 flex ">
             
 
-            <div className="w-[50%] flex flex-col justify-center text-white items-center space-y-5 py-10">
+            <div className="w-[50%] max-sm:w-full flex flex-col justify-center text-white items-center space-y-5 py-10">
                 <h2 className='text-3xl'>Login</h2>
                 <p className='text-sm'>please enter the right data in the empty fields below</p>
 
@@ -117,7 +117,7 @@ const handleLogin = async (e) => {
 
             </div>
 
-            <div className="w-[50%] relative overflow-hidden">
+            <div className="w-[50%] relative overflow-hidden max-sm:hidden">
                 <div className=" absolute z-10  w-full h-full bg-gray-900/70"></div>
                 <img src={learn} className='absolute w-full h-full z-0 object-cover' />
                  <div className="relative z-10 h-screen text-white flex flex-col py-15 px-7 space-y-6">

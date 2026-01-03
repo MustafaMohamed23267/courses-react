@@ -100,7 +100,7 @@
               </div>}
               <main className="flex py-15">
                   {/* left section */}
-                  <div className="w-[50%]">
+                  <div className="w-[50%] max-sm:w-full">
                       <div className=" flex flex-col items-center space-y-5 py-10">
                                       <h2 className='text-3xl'>Add Course</h2>
                                       <p className='text-sm'>please enter the right data in the empty fields below</p>
@@ -238,7 +238,7 @@
 
 
                   {/* right section */}
-                  <div className="w-[50%]  p-2 rounded-md relative ">
+                  <div className="w-[50%]  p-2 rounded-md relative  max-sm:hidden">
                       <div className=" absolute z-10 rounded-md  w-full h-full bg-black/40"></div>
                       <img src={person} className='z-0 w-full h-full absolute  rounded-md' />
                       <div className=' absolute top-90 left-20 z-100'>

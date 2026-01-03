@@ -343,7 +343,7 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                 <div className='flex max-sm:flex-col space-x-8'> 
                     <div className='flex items-center'> 
                         <div className='bg-teal-800 duration-500 dark:bg-gray-900/70 rounded-xl px-4 py-6 w-[620px] max-sm:w-[320px] text-white space-y-6 dark:inset-shadow-sm inset-shadow-indigo-500 dark:shadow-lg shadow-indigo-500/50'> 
-                        <h2 className='text-4xl '>Welcome back,{user.name} &#9995;</h2>
+                        <h2 className='text-4xl '>Welcome back, <br className='md:hidden' />{user.name} &#9995;</h2>
                         <p>Track your manage and LMS platform performance </p>                  
                         </div>
                     </div>

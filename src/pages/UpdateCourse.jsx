@@ -142,7 +142,7 @@
               </div>}
               <main className="flex pt-5">
                   {/* left section */}
-                  <div className="w-[50%]">
+                  <div className="w-[50%] max-sm:w-full">
                       <div className=" flex flex-col items-center space-y-5 py-10">
                                     <h2 className='text-3xl'>Update Course </h2>
                                     <p className='font-semibold'>{course.title}</p>
@@ -280,7 +280,7 @@
 
 
                   {/* right section */}
-                  <div className="w-[50%] p-2 rounded-md relative">
+                  <div className="w-[50%] p-2 rounded-md relative max-sm:hidden">
                       <div className=" absolute z-10 rounded-md  w-full bg-black/20"></div>
                       <img src={person} className='z-0 w-full absolute  rounded-md' />
                       <div className=' absolute top-70 left-20 z-100'>

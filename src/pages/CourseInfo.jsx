@@ -153,7 +153,7 @@ const fullopacity = document.getElementById("deletemodal").style.display="none" 
               </div>} */}
         
         <div id="deletemodal" className="fixed hidden w-full h-full flex-col justify-center items-center scale-[0] duration-700 backdrop-blur-sm z-100">     
-                <div  className="relative  z-0 w-[450px] h-[150px] bg-foreground flex flex-col justify-center space-y-6 rounded-lg duration-400">
+                <div  className="relative  z-0 md:w-[450px] h-[150px] bg-foreground flex flex-col justify-center space-y-6 rounded-lg duration-400">
                     <p className="text-center text-background text-base font-semibold">Are you sure you want to delete this Course</p>
                     <div className="flex justify-center space-x-4">
                         <button className="bg-red-500 px-4 py-1 rounded-md cursor-pointer duration-500 hover:bg-red-600 text-gray-100" onClick={HandelDelete}>yes</button>
@@ -164,7 +164,7 @@ const fullopacity = document.getElementById("deletemodal").style.display="none" 
             <br/>
         <div className="">
 
-            <div className="w-[30%] sticky top-0 bottom-0 z-50  left-250 ">
+            <div className="w-[30%] sticky top-0 bottom-0 z-50  md:left-250 max-sm:hidden">
                  <div className="absolute top-6.5  ">
                     <div className="flex flex-col  bg-white outline-gray-300 dark:outline-white/10 dark:bg-gray-900 dark:text-gray-200 text-gray-800  z-100 duration-700 outline-1  w-[300px] ">
                     <div  class=" space-y-5 ">
@@ -285,37 +285,41 @@ const fullopacity = document.getElementById("deletemodal").style.display="none" 
 
              {/* left section */}
              <div className="w-[65%] text-white px-10 space-y-10">
-                <div className="w-150 ">
+                <div className="md:w-150 max-sm:w-75">
                      <h2 className=" font-bold pt-20 text-3xl ">{ShowCourse.title}</h2>
                 </div>
 
-                <div className="flex space-x-6">
-                    <div className="flex space-x-2">
+                <div className="flex space-x-6 max-sm:space-x-10">
+                    <div className="flex space-x-2 max-sm:space-x-6">
                         <div>                        
-                            <span className="text-md font-bold">{ShowCourse.rating}</span><span className="text-md">/ 5</span>
+                            <span className="text-md font-bold">{ShowCourse.rating}</span><span className="text-md">/5</span>
                         </div>
                         <StarRating rating={ShowCourse.rating} />
                     </div>
-                    <span>2,018 students</span>
+                    <div className="space-x-2">
+                        <span>2,018</span><span>student</span>
+                    </div>
+                    
+                    
 
                 </div>
 
-                <div className="flex space-x-42">
-                    <div className="flex space-x-2">
+                <div className="flex md:space-x-42 max-sm:space-x-15">
+                    <div className=" space-x-2 ">
                     <span className="font-bold">Instructor </span>
-                    <span className="text-indigo-300">{ShowCourse.instructor ? ShowCourse.instructor.name : <div className="flex space-x-2">
+                    <p className="text-indigo-300 ">{ShowCourse.instructor ? ShowCourse.instructor.name : <div className="flex space-x-2">
                         <div className="w-6 h-6 bg-gray-200 rounded-full animate-spin overflow-hidden">
                                     <div className=" w-3 h-3 bg-indigo-300 rounded-t-full "></div>
                                     </div>
                                     <span>Loading</span>
-                        </div>}</span>
+                        </div>}</p>
 
                     
                     </div>
 
-                    <div className="space-x-3">
+                    <div className="space-x-3 ">
                         <span>Category</span>
-                        <span className="text-indigo-300">{ShowCourse.category.name}</span>
+                        <p className="text-indigo-300 ">{ShowCourse.category.name}</p>
                     </div>
                     
                 </div>
@@ -336,7 +340,7 @@ const fullopacity = document.getElementById("deletemodal").style.display="none" 
 
          {/* Content */}
 
-        <div className=" py-10 px-30 ">
+        <div className=" py-10 px-30 max-sm:px-5 max-sm:mb-60">
             {/* <div className="p-5 outline-1  -outline-offset-1 w-200 outline-gray-300 dark:outline-white/10 space-y-4">
                 <h2 className="text-2xl font-bold">What you will learn</h2>
                 <div className="grid grid-cols-2 gap-2.5">
@@ -374,7 +378,7 @@ const fullopacity = document.getElementById("deletemodal").style.display="none" 
                 </div>
             </div> */}
 
-            <div className="pt-10 space-y-4 w-150">
+            <div className="pt-10 space-y-4 md:w-150 ">
                 <h2 className="text-2xl font-bold">Requirements</h2>
                 {ShowCourse.requirements}
                 {/* <ul className="list pl-5">
@@ -384,7 +388,7 @@ const fullopacity = document.getElementById("deletemodal").style.display="none" 
                 </ul> */}
             </div>
 
-            <div className="pt-10 space-y-4 w-200">
+            <div className="pt-10 space-y-4 md:w-200">
                 <h2 className="text-2xl font-bold">Description</h2>
                 {ShowCourse.description}
                 {/* <p>
@@ -398,6 +402,80 @@ const fullopacity = document.getElementById("deletemodal").style.display="none" 
        
         
        </div>
+<br/>
+        <div className="px-5 md:hidden fixed bottom-0 bg-white shadow-md/20 dark:bg-gray-900 w-full p-5">
+
+                            {user&&(user.role === 'admin' || user.id === ShowCourse.instructor.id)? 
+                            <div className="flex flex-col space-y-4">
+                                <Link to={`/courses/${ShowCourse.id}/update`} class="relative overflow-hidden w-full px-6 py-3 rounded-sm bg-indigo-500 text-white group hover:border hover:border-indigo-500 cursor-pointer hover:text-indigo-500 text-center">
+
+                                        <span class="relative z-10 opacity-100 duration-300 ">
+                                            Update &#9850;
+                                        </span>
+
+                                        <span class="absolute inset-0 bg-white -translate-x-full 
+                                            group-hover:translate-x-0 transition-transform duration-400"></span>
+                                </Link>
+
+                                    <button onClick={modaldelete} class="relative overflow-hidden w-full px-6 py-3 rounded-sm bg-rose-500 text-white group hover:border hover:rose-indigo-500 cursor-pointer hover:text-rose-500 ">
+
+                                        <span class="relative z-10 opacity-100 duration-300 ">
+                                            Delete &#10006;
+                                        </span>
+
+                                        <span class="absolute inset-0 bg-white -translate-x-full 
+                                            group-hover:translate-x-0 transition-transform duration-400"></span>
+                                    </button>
+                            </div>
+                            :user&&user.role === 'instructor'?
+                            <InputRating value={rating} onChange={setRating} />
+                             
+                            :
+                            <div className="space-y-4 flex flex-col items-center"> 
+                            {token?
+                            <div className="w-full">
+                                    {message&&<p className={`text-sm font-bold text-center py-2 rounded-xl w-full ${messagecolor}` }>{message}</p>}
+                                {enrolled?
+                                <button 
+                                disabled={enrolled}
+                                className="w-full px-6 py-3 rounded-sm bg-gray-600 text-white">Enrolled</button>
+                                :
+                                <button 
+                                onClick={handleBooking} 
+                                class="relative overflow-hidden w-full px-6 py-3 rounded-sm bg-indigo-500 text-white group hover:border hover:border-indigo-500 cursor-pointer hover:text-indigo-500">
+
+                                        <span class="relative z-10 opacity-100 duration-300 ">
+                                            Enroll now &#8594;
+                                        </span>
+                                        
+
+                                        <span class="absolute inset-0 bg-white -translate-x-full 
+                                            group-hover:translate-x-0 transition-transform duration-400"></span>
+                                </button>
+                                }
+                                
+
+                                </div>
+                            
+                            :
+                            <Link to='/login' class="relative overflow-hidden w-full px-6 py-3 rounded-sm bg-indigo-500 text-white group hover:border hover:border-indigo-500 cursor-pointer hover:text-indigo-500">
+
+                                        <span class="relative z-10 opacity-100 duration-300 ">
+                                            Enroll now &#8594;
+                                        </span>
+                                        
+
+                                        <span class="absolute inset-0 bg-white -translate-x-full 
+                                            group-hover:translate-x-0 transition-transform duration-400"></span>
+                                </Link>
+                            }
+                                
+                                <span className="ml-4"><InputRating value={rating} onChange={setRating} /></span>
+                            </div>
+                           
+                            }
+                        
+        </div>
        </main>
        }
 
