@@ -379,7 +379,7 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
 
 {/* mmmmmmmmmmmmmmm  count buttons mmmmmmmmmmmmmmmmmmmmmmmmm */}
 
-                <div className=' flex max-sm:flex-col space-y-4 space-x-4 max-sm:items-center dark:bg-gray-900/70 bg-teal-900/70 p-10 rounded-t-lg rounded-b-[50px] dark:inset-shadow-sm inset-shadow-indigo-500 dark:shadow-lg shadow-indigo-500/50'>
+                <div className=' flex justify-center max-sm:flex-col space-y-4 space-x-4 max-sm:items-center dark:bg-gray-900/70 bg-teal-900/70 p-10 rounded-t-lg rounded-b-[50px] dark:inset-shadow-sm inset-shadow-indigo-500 dark:shadow-lg shadow-indigo-500/50'>
                 
 
                 {/* courses */}
@@ -444,6 +444,7 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                 </div>:""}
      
                   {/*enrolled  */}
+                   {user.role ==="admin"?
                 <div className='space-y-4'> 
                     <button onClick={enrolledtable} className={`${fiterButtons} bg-[#065f42]`}>
                       <img src={enroll} className={"w-8"} />
@@ -454,7 +455,7 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                                     <div className='w-4 h-4 rounded-full mt-1 bg-[#065f42]'></div>
                                     <span className='text-white'>Enrolled Courses</span>
                                 </div>
-                </div>
+                </div>:""}
                    
 
 
