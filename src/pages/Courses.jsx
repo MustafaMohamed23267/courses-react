@@ -30,7 +30,7 @@ export default function Courses()
                         
                     })
                      const response  = await res.json();
-                    setData(response.courses || []);
+                    setData(response.allcourses || []);
                     setLoading(false);
                     }
                     else{
