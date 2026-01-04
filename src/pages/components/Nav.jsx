@@ -51,12 +51,12 @@ export const Nav = ()=>
                     }
             }
 
-     const  logoutmodal = ()=>
-    {
+    //  const  logoutmodal = ()=>
+    // {
 
-        const modaldisplay = document.getElementById("logoutmodal").style.display= "flex" ;
-        return  modaldisplay;    
-    }  
+    //     const modaldisplay = document.getElementById("logoutmodal").style.display= "flex" ;
+    //     return  modaldisplay;    
+    // }  
 
 
     
@@ -151,9 +151,8 @@ export const Nav = ()=>
                     <span className="font-bold text-[#f66630] text-lg">{user.name}</span>
                     </div>
                     <span className="text-gray-400">{user.email}</span>
-                     {user&&user.role=='admin'?
-                        (<NavLink  className={({isActive})=>isActive?" font-semibold text-[#f66630] duration-400":"hover:text-[#fcb9a1] duration-700 text-gray-600 dark:text-gray-200 font-semibold "} to='/dashboard'>Dashboard</NavLink>):""    
-                    } 
+                   
+                        <NavLink  className={({isActive})=>isActive?" font-semibold text-[#f66630] duration-400":"hover:text-[#fcb9a1] duration-700 text-gray-600 dark:text-gray-200 font-semibold "} to='/dashboard'>Dashboard</NavLink>
                     <hr/>
                     <div>
                         <button onClick={handleLogout} class="relative overflow-hidden px-2 py-1 rounded-full bg-red-700 text-white group hover:border border-red-700 hover:border-red-700 cursor-pointer hover:text-red-700 space-x-1">

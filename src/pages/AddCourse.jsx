@@ -60,7 +60,7 @@
           DataForm.append("category_id",form.category_id);
           DataForm.append("image_url",form.image_url);
 
-          const res = await fetch("http://localhost:8000/api/courses",{
+          const res = await fetch("https://courses-laravel-production.up.railway.app/api/courses",{
               method:"POST",
               body:DataForm,
               headers:{

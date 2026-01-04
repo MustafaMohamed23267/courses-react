@@ -278,11 +278,13 @@ const fullopacity = document.getElementById("deletemodal").style.display="none" 
               {/* <div className="w-full sticky top-0   ">
                 <div className="absolute top-10 bottom "></div>
               </div> */}
-
-
+            <div className="md:hidden px-2">
+                <img src={token?ShowCourse.image_url:`https://courses-laravel-production.up.railway.app/storage/${ShowCourse.image_url}`} className="md:hidden w-full  z-0" />
+            </div>
+ 
         <div className=" flex justify-between mt-10 bg-[#13161b] py-4 px-10 z-0">
-           
 
+           
              {/* left section */}
              <div className="w-[65%] text-white px-10 space-y-10">
                 <div className="md:w-150 max-sm:w-75">

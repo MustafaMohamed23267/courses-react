@@ -30,7 +30,7 @@ export default function Courses()
                         
                     })
                      const response  = await res.json();
-                    setData(response.data || []);
+                    setData(response.courses || []);
                     setLoading(false);
                     }
                     else{
@@ -99,7 +99,7 @@ export default function Courses()
                 <div className="flex flex-col relative duration-700 outline-1 -outline-offset-1 outline-gray-300 dark:outline-white/10 dark:bg-white/5  pb-10  overflow-hidden  rounded-xl ">
                 <Link to={`/courses/${data.id}`}  class=" space-y-5  ">
                     <div className="w-full h-[250px]">
-                      <img  src={token?data.image_url: `https://courses-laravel-production.up.railway.app/storage/${data.image_url}`} class="duration-500  hover:scale-[1.05] w-full h-full z-50 "/>
+                      <img  src={`https://courses-laravel-production.up.railway.app/storage/${data.image_url}`} class="duration-500  hover:scale-[1.05] w-full h-full z-50 "/>
                     </div>
                     <div className="absolute top-59 right-2 text-white text-sm flex space-x-1 justify-baseline bg-[#1c1e53] py-0.5 px-5 rounded-full">
                         <span className="text-[12px] mt-[2.5px]"> {data.rating}</span>
@@ -113,7 +113,7 @@ export default function Courses()
 
                     <div className=" text-center text-sm flex justify-center space-x-1 transition duration-400">
                         <sapn>Created by:</sapn>  
-                        <span className="text-indigo-500 font-semibold">{ data.instructor.name? data.instructor.name :"not found " }</span>
+                        <span className="text-indigo-500 font-semibold">{ data.instructor?.name || "not found" }</span>
                     </div>
 
                     <div className="flex space-x-6 justify-center">

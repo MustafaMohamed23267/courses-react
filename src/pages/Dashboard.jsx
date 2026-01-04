@@ -108,16 +108,17 @@ const fiterButtons = "rounded-xl flex flex-col items-center space-y-2 px-2 py-4 
                useEffect(()=>
               {
                   const fetchCourses = async()=>{
-                      const res = await fetch("https://courses-laravel-production.up.railway.app/api/allcourses",{
+                      const res = await fetch( "https://courses-laravel-production.up.railway.app/api/courses",{
                           method:"GET",
                           headers:{
                               Accept:"application/json",
+                              Authorization: `Bearer ${localStorage.getItem("token")}`
                           }
                           
                       })
                       const response  = await res.json();
-                      setCourses(response);
-                      setCoursesCount(response.length);
+                      setCourses(response.courses || []);
+                      setCoursesCount(response.courses.length);
                      
 
                   }
@@ -325,15 +326,20 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                 <span className=' max-sm:hidden'>Courses</span>
                 </Link>
 
+                 {user.role !="student"?
                 <Link to='/addcourse' className={`${buttonstyle} space-x-2`}> 
                 <img src={add} className={"w-5 max-sm:w-8"} /> 
                 <span className=' max-sm:hidden'>Add Courses</span>
                 </Link>
+                :""}
 
+                {user.role ==="admin"?
                 <Link to='/addcategory' className={`${buttonstyle} space-x-2`}> 
-                <img src={add2} className={"md:w-5 md:fill-white max-sm:w-5"} />
-                <span className=' max-sm:hidden'>Add Category</span>
-                </Link>
+                                <img src={add2} className={"md:w-5 md:fill-white max-sm:w-5"} />
+                                <span className=' max-sm:hidden'>Add Category</span>
+                                </Link>
+                :""}
+               
                 
 
               </section>
@@ -375,6 +381,8 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
 
                 <div className=' flex max-sm:flex-col space-y-4 space-x-4 max-sm:items-center dark:bg-gray-900/70 bg-teal-900/70 p-10 rounded-t-lg rounded-b-[50px] dark:inset-shadow-sm inset-shadow-indigo-500 dark:shadow-lg shadow-indigo-500/50'>
                 
+
+                {/* courses */}
                 <div className='space-y-4'> 
                 <button onClick={getcourses} className={`${fiterButtons} bg-[#4f46e5]`}>
                                     <img src={course} className={"w-8"} />
@@ -388,7 +396,8 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                 </div>
                 </div>
                                 
-
+               {/* students */}
+               {user.role !="student"?
                 <div className='space-y-4'> 
                     <button onClick={getstudent} className={`${fiterButtons} bg-[#06b6d4]`}>
                                         <img src={student} className={"w-8"} />
@@ -400,38 +409,41 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                                     <div className='w-4 h-4 rounded-full mt-1 bg-[#06b6d4]'></div>
                                     <span className='text-white'>Students</span>
                                 </div>
-                    </div>
+                    </div>:""}      
 
-                 <div className='space-y-4'> 
-     <button onClick={getinstructor} className={`${fiterButtons} bg-[#f43f5e]`}>
+                    {/* instructors */}
+                 {user.role ==="admin"?   
+                <div className='space-y-4'> 
+                    <button onClick={getinstructor} className={`${fiterButtons} bg-[#f43f5e]`}>
                       {/* <PiChalkboardTeacherFill className='text-3xl text-gray-300 dark:text-white'/> */}
                       <img src={instructor} className={"w-8"} />
                       <p className='text-sm text-gray-300 dark:text-white'>number of instructors</p>
                       <p className='font-bold text-2xl '>{countInstructors}</p>
                     </button>
-  <div className='flex space-x-4 justify-center'>
-                            <div className='w-4 h-4 rounded-full mt-1 bg-[#f43f5e]'></div>
-                            <span className='text-white'>Instructors</span>
+                    <div className='flex space-x-4 justify-center'>
+                        <div className='w-4 h-4 rounded-full mt-1 bg-[#f43f5e]'></div>
+                        <span className='text-white'>Instructors</span>
                     </div>
-                    </div>
+                </div>:""}
                    
 
-               
+               {/* category */}
+               {user.role ==="admin"?
                 <div className='space-y-4'> 
-<button onClick={getcategory} className={`${fiterButtons} bg-[#f59e0b]`}>
+                    <button onClick={getcategory} className={`${fiterButtons} bg-[#f59e0b]`}>
                       {/* <TbCategoryFilled className='text-3xl text-gray-300 dark:text-white'/> */}
                       <img src={cat} className={"w-8"} />
                       <p className='text-sm text-gray-300 dark:text-white'>Categories</p>
                       <p className='font-bold text-2xl  '>{categoryCount}</p>
                     </button>
 
-<div className='flex space-x-4 justify-center'>
-                                    <div className='w-4 h-4 rounded-full mt-1 bg-[#f59e0b]'></div>
-                                    <span className='text-white'>Categories</span>
-                                </div>
-                    </div>
+                        <div className='flex space-x-4 justify-center'>
+                            <div className='w-4 h-4 rounded-full mt-1 bg-[#f59e0b]'></div>
+                            <span className='text-white'>Categories</span>
+                        </div>
+                </div>:""}
      
-                  
+                  {/*enrolled  */}
                 <div className='space-y-4'> 
                     <button onClick={enrolledtable} className={`${fiterButtons} bg-[#065f42]`}>
                       <img src={enroll} className={"w-8"} />
@@ -573,9 +585,10 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                                 <th scope="col" className="px-6 py-3 font-medium">
                                     Level
                                 </th>
+                                {user.role==="admin"?
                                 <th scope="col" className="px-6 py-3 font-medium">
                                     Instructor
-                                </th>
+                                </th>:""}
                                 <th scope="col" className="px-8 py-3 font-medium">
                                     Rate
                                 </th>
@@ -597,9 +610,10 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                                 <td className="px-3 py-4 text-gray-600 dark:text-gray-400">
                                     {cor.level}
                                 </td>
-                                <td className="px-3 py-4 text-indigo-600 dark:text-gray-400 font-semibold">
+                                {user.role==="admin"? <td className="px-3 py-4 text-indigo-600 dark:text-gray-400 font-semibold">
                                     {cor.instructor.name ? cor.instructor.name :"not found "}
-                                </td>
+                                </td>:""}
+                               
                                 <td className=" py-4 flex space-x-1 text-gray-600 dark:text-gray-400">
                                 <p className='font-bold'>
                                     {cor.rating}
