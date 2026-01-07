@@ -41,6 +41,7 @@ const fiterButtons = "rounded-xl flex flex-col items-center space-y-2 px-2 py-4 
   const [categoryCount , setCategoryCount]= useState(0);
   const [enrolledCount , setEnrolledCount]= useState(0);
   const [enrolledUsers , setEnrolledUsers]= useState([]);
+  const [inststudents , setInststudents] = useState([]);
 
   
 
@@ -154,6 +155,14 @@ const deleteModalfunction = (cat)=>{
 setDeletemodal(true);
 setSelectedCategory(cat);
 }
+
+
+const InstructorStudents = (couID)=>
+    {
+        const inscor = courses.find(co=>co.id === couID);
+        setInststudents(inscor.users);
+        setInstmenu(true);
+    }
 
 const notselected = ()=>{
     setDeletemodal(false);
@@ -403,7 +412,9 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                                         <img src={student} className={"w-8"} />
                                     {/* <PiStudentFill className=' text-3xl text-gray-300 dark:text-white'/> */}
                                     <p className='text-sm text-gray-300 dark:text-white'>number of students</p>
-                                    <p className='font-bold  text-2xl '>{countStudent}</p>
+                                    {user.role==="instructor"?<p className='font-bold  text-2xl '>{courses.users?.length || 0}</p>
+                                    :<p className='font-bold  text-2xl '>{countStudent}</p>}
+                                    
                                     </button> 
                                  <div className='flex space-x-4 justify-center'>
                                     <div className='w-4 h-4 rounded-full mt-1 bg-[#06b6d4]'></div>
@@ -479,6 +490,17 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                                     ))}
                         </div>
                                         )}
+
+                    {inststudents.length > 0 && (
+                        <div className="  space-y-4 z-20  ">
+                            {inststudents.map(student => (
+                                <p key={student.id} className="text-sm">
+                                    <p  className='hover:text-indigo-600 duration-500' >{student.name}</p>
+                                                            
+                                </p>
+                                    ))}
+                        </div>
+                                        )}
                 </div>}
                
 {/*mmmmmmmmmmmmmmmmmm   tabels  mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm  */}
@@ -507,7 +529,9 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                             </tr>
                         </thead>
                         <tbody>
-                        {students.map(student=>
+
+                        {
+                        students.map(student=>
                             <tr className="border-0  border-gray-300 dark:border-gray-900">
                                 <th scope="row" className="px-6 py-4 font-medium text-heading whitespace-nowrap">
                                     {num++}
@@ -523,7 +547,8 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                                     {/* map(cors=><p>{cors.title}</p>) */}
                                 </td>
                             </tr>
-                            )}
+                            )
+                            }
                         </tbody>
                     </table>
                 )}
@@ -586,10 +611,14 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                                 <th scope="col" className="px-6 py-3 font-medium">
                                     Level
                                 </th>
-                                {user.role==="admin"?
+                                {user.role==="instructor"?
+                                <th scope="col" className="px-6 py-3 font-medium">
+                                    Students
+                                </th>:
                                 <th scope="col" className="px-6 py-3 font-medium">
                                     Instructor
-                                </th>:""}
+                                </th>
+                                }
                                 <th scope="col" className="px-8 py-3 font-medium">
                                     Rate
                                 </th>
@@ -611,9 +640,13 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                                 <td className="px-3 py-4 text-gray-600 dark:text-gray-400">
                                     {cor.level}
                                 </td>
-                                {user.role==="admin"? <td className="px-3 py-4 text-indigo-600 dark:text-gray-400 font-semibold">
+                                {user.role==="instructor"? <td className="px-3 py-4 text-indigo-600 dark:text-gray-400 font-semibold">
+                                    <button onClick={()=>InstructorStudents(cor.id)} className='cursor-pointer bg-indigo-600 duration-500 hover:scale-115 px-4 py-1 rounded-lg'>{cor.users_count}</button>
+                                </td>:
+                                <td className="px-3 py-4 text-indigo-600 dark:text-gray-400 font-semibold">
                                     {cor.instructor.name ? cor.instructor.name :"not found "}
-                                </td>:""}
+                                </td>
+                                }
                                
                                 <td className=" py-4 flex space-x-1 text-gray-600 dark:text-gray-400">
                                 <p className='font-bold'>
@@ -731,7 +764,21 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                 )}
                 
             </div>
+{/* <p>{courses.users?.length }</p>
+{courses.map(course => (
+  <div key={course.id}>
+    <h3>{course.title}</h3>
 
+    {course.users?.length > 0 ? (
+        
+      course.users.map(stu => (
+        <p key={stu.id}>{stu.name}</p>
+      ))
+    ) : (
+      <p>No students</p>
+    )}
+  </div>
+))} */}
 
 
 {/* {enrolledUsers.map(course => (
