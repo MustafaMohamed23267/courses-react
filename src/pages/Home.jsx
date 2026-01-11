@@ -157,7 +157,7 @@ export default function Home()
                         {
                             
                                 category.slice(0,5).map((cat , key)=>
-                                <button key={key} className='px-10 py-5 rounded-xl bg-white/45 dark:bg-white/5 text-center space-y-12 hover:scale-[1.1] duration-500'>
+                                <button key={key} className='px-10 py-5 max-sm:w-full rounded-xl bg-white/45 dark:bg-white/5 text-center space-y-12 hover:scale-[1.1] duration-500'>
                                     <div className=' space-y-3'>
                                         <p className='font-bold text-xl'>{cat.name}</p>
                                         <p className='text-gray-500 dark:text-gray-200'>this category belongs to {cat.slug} field</p>
