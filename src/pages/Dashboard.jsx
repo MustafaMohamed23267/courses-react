@@ -467,16 +467,12 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                                     <span className='text-white'>Enrolled Courses</span>
                                 </div>
                 </div>:""}
-                   
-
-
-                   
-        
-
-        
-                    
-        
+                 
                 </div>
+
+                
+
+        {/* menu of students and courses  */}
                 {instmenu&&<div className="relative outline-1 outline-gray-400 dark:outline-white/20 space-y-4 z-20 bg-white dark:bg-gray-900 p-5 rounded-xl">
                 <button onClick={()=>setInstmenu(false)} className='absolute top-1.5 right-1 cursor-pointer' ><X className='bg-rose-500 rounded-md text-white' /></button>
                 
@@ -502,6 +498,8 @@ const COLORS = ['#4f46e5', '#06b6d4', '#f43f5e', '#f59e0b', '#065f42'];
                         </div>
                                         )}
                 </div>}
+
+
                
 {/*mmmmmmmmmmmmmmmmmm   tabels  mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm  */}
             <div className="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base py-10 border-none border-default">

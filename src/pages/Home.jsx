@@ -198,7 +198,7 @@ export default function Home()
 
                             {/*  */}
                             <div className='bg-teal-600 h-15 w-15 rounded-full absolute top-37 max-sm:top-50 -right-2 z-0'></div>
-                            <div className='relative space-y-2 top-10  rounded-4xl shadow-md/20  w-[900px] h-[450px]  bg-white dark:bg-gray-900 z-5 max-sm:w-[450px] max-sm:h-[470px] max-sm:ml-5'>
+                            <div className='relative space-y-2 top-10  rounded-4xl shadow-md/20  w-[900px] h-[450px]  bg-white dark:bg-gray-900/30 backdrop-blur-sm z-5 max-sm:w-[450px] max-sm:h-[470px] max-sm:ml-5'>
                             
                                 <img src={world} className='absolute w-full h-full z-0 opacity-30 dark:opacity-5' />
                                 <div className='absolute h-full px-10 space-y-6 top-30'>
