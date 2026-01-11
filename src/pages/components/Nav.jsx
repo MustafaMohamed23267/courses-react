@@ -145,7 +145,7 @@ export const Nav = ()=>
 
               {/* Serarch Form */}
           {profile&&
-          <div className="flex flex-col fixed space-y-5 top-17  dark:outline-0 z-100 right-35 bg-white outline-gray-400 dark:bg-gray-900 p-5 rounded-2xl shadow-md/30">
+          <div className="flex flex-col fixed space-y-5 top-17  dark:outline-0 z-100 right-35 max-sm:right-1 bg-white outline-gray-400 dark:bg-gray-900 p-5 rounded-2xl shadow-md/30">
                     <span className="font-semibold text-lg">Welcome</span>
                     <div className="flex space-x-2 z-90 ">
                     <span className="font-bold text-[#f66630] text-lg">{user.name}</span>
