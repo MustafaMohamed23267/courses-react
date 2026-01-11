@@ -37,7 +37,7 @@ export default function Home()
         return(
             <>
             
-            <main> 
+            <main className='max-sm:w-fit'> 
                 <Nav/>
                 {/* first element mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm*/}
                 <section className=" flex max-sm:flex-col mask-b-from-65% mask-b-to-100% bg-[#fddad3] dark:bg-gray-900  "> 
