@@ -37,7 +37,7 @@ export const Theme =()=>
         
 
            return(
-            <button className={`cursor-pointer animate-bounce ${isDark?"pr-6 pl-1 bg-blue-300 ":"pl-6 pr-1 bg-yellow-200"} hover:scale-[1.1] duration-700 py-1 transition-colors rounded-full focus:outline-hidden `} onClick={themetoggle}>
+            <button className={`cursor-pointer  ${isDark?"pr-6 pl-1 bg-blue-300 ":"pl-6 pr-1 bg-yellow-200"} hover:scale-[1.1] duration-700 py-1 transition-colors rounded-full focus:outline-hidden `} onClick={themetoggle}>
                 {isDark?
                 <div  className="flex space-x-2 duration-500">
                     <Moon  className="h-6 w-6  bg-indigo-500 text-white rounded-full  "/> 
